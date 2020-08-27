@@ -28,12 +28,13 @@ db.on('open', () => {
   console.log('connection made!');
 });
 
-app.get('/', (req, res) => {
-  res.redirect('/todos');
-})
 
 const todoController = require('./controllers/todos.js');
 app.use('/todos', todoController);
+
+app.get('/', (req, res) => {
+  res.redirect('/todos');
+})
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}!`);

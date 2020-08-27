@@ -5,6 +5,9 @@ const Todo = require('../models/todo.js');
 // Index
 router.get('/', (req, res) => {
   Todo.find({}, (error, allTodos) => {
+    // Error handling goes here
+    // TODO: In the future, I would put some error handling here
+
     res.render('Index', {
       todos: allTodos
     });
